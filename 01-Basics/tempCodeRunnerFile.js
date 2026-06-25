@@ -1,3 +1,4 @@
- = 1
-//  let booleanIsLoggedIn = Boolean(isLoggedIn)
-//  console.log(booleanIsLoggedIn);
+);
+// console.log((Math.random()*10) + 1);
+
+// console.log(Math.floor(Math.random()*10) + 1);
