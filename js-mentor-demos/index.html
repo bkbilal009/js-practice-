@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Mentor Checklist Demos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>JS Mentor Checklist Demos</h1>
+    <p>Both interactive demos are split into separate files covering all required concepts.</p>
+
+    <div class="demo-container">
+
+        <div class="demo-card">
+            <div>
+                <h2>Demo 1: Closure Counter (Scope & Closures)</h2>
+                <p>This counter uses a JavaScript closure to securely maintain its internal state.</p>
+                <h3 id="counterValue">Count: 0</h3>
+            </div>
+            <button id="incrementBtn">Increment</button>
+        </div>
+
+        <div class="demo-card">
+            <div>
+                <h2>Demo 2: Live Quote Fetcher (Promises & Events)</h2>
+                <p>This button triggers a Promise that simulates fetching data from an external API.</p>
+                <div id="quoteDisplay">Click the button to load a quote...</div>
+            </div>
+            <button id="fetchBtn">Fetch New Quote</button>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
