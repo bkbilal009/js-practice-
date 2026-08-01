@@ -1,129 +1,195 @@
-// =======================================
+// ===============================================
 // JavaScript Date Object
-// =======================================
+// ===============================================
 
-// Create a Date object containing the current date and time
+// Create a Date object with the current date and time
 let myDate = new Date();
 
-// Print the complete Date object
 console.log(myDate);
+// Output (Example):
+// 2026-08-01T14:05:30.123Z
 
-// Convert Date into a readable string
 console.log(myDate.toString());
+// Output:
+// Sat Aug 01 2026 19:05:30 GMT+0500 (Pakistan Standard Time)
 
-// Convert Date into ISO format (YYYY-MM-DDTHH:mm:ss.sssZ)
 console.log(myDate.toISOString());
+// Output:
+// 2026-08-01T14:05:30.123Z
 
-// Convert Date into JSON format
-// Mostly used when sending data to APIs
 console.log(myDate.toJSON());
+// Output:
+// 2026-08-01T14:05:30.123Z
 
-// Print only the date according to the local system
 console.log(myDate.toLocaleDateString());
+// Output:
+// 8/1/2026
 
-// Print both date and time according to the local system
 console.log(myDate.toLocaleString());
+// Output:
+// 8/1/2026, 7:05:30 PM
 
-// Check the data type
-// Output: object
 console.log(typeof myDate);
+// Output:
+// object
 
 
 
-// =======================================
-// Creating Custom Dates
-// =======================================
+// ===============================================
+// Create a Custom Date
+// ===============================================
 
-// Months are ZERO indexed
+// Months are ZERO indexed.
 // January = 0
 // February = 1
 // March = 2
 // ...
+
 let myCreateDate = new Date(2026, 0, 23);
 
 console.log(myCreateDate);
+// Output (UTC Representation):
+// 2026-01-22T19:00:00.000Z
+
 console.log(myCreateDate.toDateString());
+// Output:
+// Fri Jan 23 2026
 
 
 
-// Create a date with time
-// Year, Month, Day, Hour, Minute
+// ===============================================
+// Create Date with Time
+// ===============================================
+
 let myCreateDateWithTime = new Date(2026, 0, 23, 2, 3);
 
 console.log(myCreateDateWithTime.toLocaleDateString());
+// Output:
+// 1/23/2026
+
 console.log(myCreateDateWithTime.toLocaleString());
+// Output:
+// 1/23/2026, 2:03:00 AM
 
 
 
-// =======================================
-// Creating Date from Strings
-// =======================================
+// ===============================================
+// Create Date from String (YYYY-MM-DD)
+// ===============================================
 
-// Format: YYYY-MM-DD
 let dateFromYear = new Date("2026-01-23");
 
-// Format: MM-DD-YYYY
+console.log(dateFromYear.toLocaleString());
+// Output (may vary by timezone):
+// 1/23/2026, 5:00:00 AM
+
+
+
+// ===============================================
+// Create Date from String (MM-DD-YYYY)
+// ===============================================
+
 let dateFromMonth = new Date("02-14-2026");
 
 console.log(dateFromMonth.toLocaleString());
+// Output:
+// 2/14/2026, 12:00:00 AM
 
 
 
-// =======================================
+// ===============================================
 // Timestamp
-// =======================================
+// ===============================================
 
-// Returns current timestamp in milliseconds
+// Current timestamp in milliseconds
 let myTimeStamp = Date.now();
 
 console.log(myTimeStamp);
+// Output (Example):
+// 1785593130123
 
-// Timestamp of our custom date
 console.log(dateFromMonth.getTime());
+// Output (Example):
+// 1771023600000
 
-// Current timestamp
 console.log(Date.now());
+// Output (Example):
+// 1785593130123
 
-// Convert milliseconds to seconds
 console.log(Date.now() / 1000);
+// Output (Example):
+// 1785593130.123
 
-// Remove decimal values
 console.log(Math.floor(Date.now() / 1000));
+// Output:
+// 1785593130
 
 
 
-// =======================================
-// Getting Individual Date Values
-// =======================================
+// ===============================================
+// Get Individual Date Information
+// ===============================================
 
 let newDate = new Date();
 
 console.log(newDate);
+// Output (Example):
+// 2026-08-01T14:05:30.123Z
 
-// Month (0-11)
 console.log(newDate.getMonth());
+// Output:
+// 7
+//
+// Month Index:
+// Jan = 0
+// Feb = 1
+// Mar = 2
+// Apr = 3
+// May = 4
+// Jun = 5
+// Jul = 6
+// Aug = 7
 
-// Time in milliseconds since Jan 1, 1970
 console.log(newDate.getTime());
+// Output (Example):
+// 1785593130123
 
-// Day of the week
+console.log(newDate.getDay());
+// Output:
+// 6
+//
+// Day Index:
 // Sunday = 0
 // Monday = 1
-// ...
-console.log(newDate.getDay());
+// Tuesday = 2
+// Wednesday = 3
+// Thursday = 4
+// Friday = 5
+// Saturday = 6
 
 
 
-// =======================================
-// Custom Locale Formatting
-// =======================================
+// ===============================================
+// Custom Formatting
+// ===============================================
 
-// Correct syntax
+// Show only the weekday name
 console.log(
     newDate.toLocaleString("default", {
-        weekday: "long", // Full weekday name
+        weekday: "long",
     })
 );
-
-// Example Output:
+// Output:
 // Saturday
+
+
+
+// ===============================================
+// Template Literal Example
+// ===============================================
+
+console.log(
+    `Today is ${newDate.toDateString()} and the time is ${newDate.toLocaleTimeString()}`
+);
+// Output (Example):
+// Today is Sat Aug 01 2026 and the time is 7:05:30 PM
