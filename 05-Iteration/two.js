@@ -18,7 +18,8 @@ while (arr < myArray.length) {
 
 
 // +++++++++++++++++++++++++++++++++++++++++ (do-while loop) +++++++++++++++++++++++++++++++++++++++++++++++++
-
+// special properties of do-while loop is 
+// first do and then while means ---> first run and then check condition.
 
 let score = 1
 do {
